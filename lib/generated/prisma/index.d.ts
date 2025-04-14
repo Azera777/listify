@@ -873,34 +873,82 @@ export namespace Prisma {
 
   export type BoardMinAggregateOutputType = {
     id: string | null
+    orgId: string | null
     title: string | null
+    imageId: string | null
+    imageThumbUrl: string | null
+    imageFullUrl: string | null
+    imageUserName: string | null
+    imageLinkHTML: string | null
+    createdAt: Date | null
+    updatedAt: Date | null
   }
 
   export type BoardMaxAggregateOutputType = {
     id: string | null
+    orgId: string | null
     title: string | null
+    imageId: string | null
+    imageThumbUrl: string | null
+    imageFullUrl: string | null
+    imageUserName: string | null
+    imageLinkHTML: string | null
+    createdAt: Date | null
+    updatedAt: Date | null
   }
 
   export type BoardCountAggregateOutputType = {
     id: number
+    orgId: number
     title: number
+    imageId: number
+    imageThumbUrl: number
+    imageFullUrl: number
+    imageUserName: number
+    imageLinkHTML: number
+    createdAt: number
+    updatedAt: number
     _all: number
   }
 
 
   export type BoardMinAggregateInputType = {
     id?: true
+    orgId?: true
     title?: true
+    imageId?: true
+    imageThumbUrl?: true
+    imageFullUrl?: true
+    imageUserName?: true
+    imageLinkHTML?: true
+    createdAt?: true
+    updatedAt?: true
   }
 
   export type BoardMaxAggregateInputType = {
     id?: true
+    orgId?: true
     title?: true
+    imageId?: true
+    imageThumbUrl?: true
+    imageFullUrl?: true
+    imageUserName?: true
+    imageLinkHTML?: true
+    createdAt?: true
+    updatedAt?: true
   }
 
   export type BoardCountAggregateInputType = {
     id?: true
+    orgId?: true
     title?: true
+    imageId?: true
+    imageThumbUrl?: true
+    imageFullUrl?: true
+    imageUserName?: true
+    imageLinkHTML?: true
+    createdAt?: true
+    updatedAt?: true
     _all?: true
   }
 
@@ -978,7 +1026,15 @@ export namespace Prisma {
 
   export type BoardGroupByOutputType = {
     id: string
+    orgId: string
     title: string
+    imageId: string
+    imageThumbUrl: string
+    imageFullUrl: string
+    imageUserName: string
+    imageLinkHTML: string
+    createdAt: Date
+    updatedAt: Date
     _count: BoardCountAggregateOutputType | null
     _min: BoardMinAggregateOutputType | null
     _max: BoardMaxAggregateOutputType | null
@@ -1000,24 +1056,48 @@ export namespace Prisma {
 
   export type BoardSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
+    orgId?: boolean
     title?: boolean
+    imageId?: boolean
+    imageThumbUrl?: boolean
+    imageFullUrl?: boolean
+    imageUserName?: boolean
+    imageLinkHTML?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
   }, ExtArgs["result"]["board"]>
 
 
 
   export type BoardSelectScalar = {
     id?: boolean
+    orgId?: boolean
     title?: boolean
+    imageId?: boolean
+    imageThumbUrl?: boolean
+    imageFullUrl?: boolean
+    imageUserName?: boolean
+    imageLinkHTML?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
   }
 
-  export type BoardOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "title", ExtArgs["result"]["board"]>
+  export type BoardOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "orgId" | "title" | "imageId" | "imageThumbUrl" | "imageFullUrl" | "imageUserName" | "imageLinkHTML" | "createdAt" | "updatedAt", ExtArgs["result"]["board"]>
 
   export type $BoardPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     name: "Board"
     objects: {}
     scalars: $Extensions.GetPayloadResult<{
       id: string
+      orgId: string
       title: string
+      imageId: string
+      imageThumbUrl: string
+      imageFullUrl: string
+      imageUserName: string
+      imageLinkHTML: string
+      createdAt: Date
+      updatedAt: Date
     }, ExtArgs["result"]["board"]>
     composites: {}
   }
@@ -1388,7 +1468,15 @@ export namespace Prisma {
    */
   interface BoardFieldRefs {
     readonly id: FieldRef<"Board", 'String'>
+    readonly orgId: FieldRef<"Board", 'String'>
     readonly title: FieldRef<"Board", 'String'>
+    readonly imageId: FieldRef<"Board", 'String'>
+    readonly imageThumbUrl: FieldRef<"Board", 'String'>
+    readonly imageFullUrl: FieldRef<"Board", 'String'>
+    readonly imageUserName: FieldRef<"Board", 'String'>
+    readonly imageLinkHTML: FieldRef<"Board", 'String'>
+    readonly createdAt: FieldRef<"Board", 'DateTime'>
+    readonly updatedAt: FieldRef<"Board", 'DateTime'>
   }
     
 
@@ -1726,7 +1814,15 @@ export namespace Prisma {
 
   export const BoardScalarFieldEnum: {
     id: 'id',
-    title: 'title'
+    orgId: 'orgId',
+    title: 'title',
+    imageId: 'imageId',
+    imageThumbUrl: 'imageThumbUrl',
+    imageFullUrl: 'imageFullUrl',
+    imageUserName: 'imageUserName',
+    imageLinkHTML: 'imageLinkHTML',
+    createdAt: 'createdAt',
+    updatedAt: 'updatedAt'
   };
 
   export type BoardScalarFieldEnum = (typeof BoardScalarFieldEnum)[keyof typeof BoardScalarFieldEnum]
@@ -1742,7 +1838,13 @@ export namespace Prisma {
 
   export const BoardOrderByRelevanceFieldEnum: {
     id: 'id',
-    title: 'title'
+    orgId: 'orgId',
+    title: 'title',
+    imageId: 'imageId',
+    imageThumbUrl: 'imageThumbUrl',
+    imageFullUrl: 'imageFullUrl',
+    imageUserName: 'imageUserName',
+    imageLinkHTML: 'imageLinkHTML'
   };
 
   export type BoardOrderByRelevanceFieldEnum = (typeof BoardOrderByRelevanceFieldEnum)[keyof typeof BoardOrderByRelevanceFieldEnum]
@@ -1761,6 +1863,13 @@ export namespace Prisma {
 
 
   /**
+   * Reference to a field of type 'DateTime'
+   */
+  export type DateTimeFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'DateTime'>
+    
+
+
+  /**
    * Reference to a field of type 'Int'
    */
   export type IntFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Int'>
@@ -1775,12 +1884,28 @@ export namespace Prisma {
     OR?: BoardWhereInput[]
     NOT?: BoardWhereInput | BoardWhereInput[]
     id?: StringFilter<"Board"> | string
+    orgId?: StringFilter<"Board"> | string
     title?: StringFilter<"Board"> | string
+    imageId?: StringFilter<"Board"> | string
+    imageThumbUrl?: StringFilter<"Board"> | string
+    imageFullUrl?: StringFilter<"Board"> | string
+    imageUserName?: StringFilter<"Board"> | string
+    imageLinkHTML?: StringFilter<"Board"> | string
+    createdAt?: DateTimeFilter<"Board"> | Date | string
+    updatedAt?: DateTimeFilter<"Board"> | Date | string
   }
 
   export type BoardOrderByWithRelationInput = {
     id?: SortOrder
+    orgId?: SortOrder
     title?: SortOrder
+    imageId?: SortOrder
+    imageThumbUrl?: SortOrder
+    imageFullUrl?: SortOrder
+    imageUserName?: SortOrder
+    imageLinkHTML?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
     _relevance?: BoardOrderByRelevanceInput
   }
 
@@ -1789,12 +1914,28 @@ export namespace Prisma {
     AND?: BoardWhereInput | BoardWhereInput[]
     OR?: BoardWhereInput[]
     NOT?: BoardWhereInput | BoardWhereInput[]
+    orgId?: StringFilter<"Board"> | string
     title?: StringFilter<"Board"> | string
+    imageId?: StringFilter<"Board"> | string
+    imageThumbUrl?: StringFilter<"Board"> | string
+    imageFullUrl?: StringFilter<"Board"> | string
+    imageUserName?: StringFilter<"Board"> | string
+    imageLinkHTML?: StringFilter<"Board"> | string
+    createdAt?: DateTimeFilter<"Board"> | Date | string
+    updatedAt?: DateTimeFilter<"Board"> | Date | string
   }, "id">
 
   export type BoardOrderByWithAggregationInput = {
     id?: SortOrder
+    orgId?: SortOrder
     title?: SortOrder
+    imageId?: SortOrder
+    imageThumbUrl?: SortOrder
+    imageFullUrl?: SortOrder
+    imageUserName?: SortOrder
+    imageLinkHTML?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
     _count?: BoardCountOrderByAggregateInput
     _max?: BoardMaxOrderByAggregateInput
     _min?: BoardMinOrderByAggregateInput
@@ -1805,42 +1946,106 @@ export namespace Prisma {
     OR?: BoardScalarWhereWithAggregatesInput[]
     NOT?: BoardScalarWhereWithAggregatesInput | BoardScalarWhereWithAggregatesInput[]
     id?: StringWithAggregatesFilter<"Board"> | string
+    orgId?: StringWithAggregatesFilter<"Board"> | string
     title?: StringWithAggregatesFilter<"Board"> | string
+    imageId?: StringWithAggregatesFilter<"Board"> | string
+    imageThumbUrl?: StringWithAggregatesFilter<"Board"> | string
+    imageFullUrl?: StringWithAggregatesFilter<"Board"> | string
+    imageUserName?: StringWithAggregatesFilter<"Board"> | string
+    imageLinkHTML?: StringWithAggregatesFilter<"Board"> | string
+    createdAt?: DateTimeWithAggregatesFilter<"Board"> | Date | string
+    updatedAt?: DateTimeWithAggregatesFilter<"Board"> | Date | string
   }
 
   export type BoardCreateInput = {
     id?: string
+    orgId: string
     title: string
+    imageId: string
+    imageThumbUrl: string
+    imageFullUrl: string
+    imageUserName: string
+    imageLinkHTML: string
+    createdAt?: Date | string
+    updatedAt?: Date | string
   }
 
   export type BoardUncheckedCreateInput = {
     id?: string
+    orgId: string
     title: string
+    imageId: string
+    imageThumbUrl: string
+    imageFullUrl: string
+    imageUserName: string
+    imageLinkHTML: string
+    createdAt?: Date | string
+    updatedAt?: Date | string
   }
 
   export type BoardUpdateInput = {
     id?: StringFieldUpdateOperationsInput | string
+    orgId?: StringFieldUpdateOperationsInput | string
     title?: StringFieldUpdateOperationsInput | string
+    imageId?: StringFieldUpdateOperationsInput | string
+    imageThumbUrl?: StringFieldUpdateOperationsInput | string
+    imageFullUrl?: StringFieldUpdateOperationsInput | string
+    imageUserName?: StringFieldUpdateOperationsInput | string
+    imageLinkHTML?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type BoardUncheckedUpdateInput = {
     id?: StringFieldUpdateOperationsInput | string
+    orgId?: StringFieldUpdateOperationsInput | string
     title?: StringFieldUpdateOperationsInput | string
+    imageId?: StringFieldUpdateOperationsInput | string
+    imageThumbUrl?: StringFieldUpdateOperationsInput | string
+    imageFullUrl?: StringFieldUpdateOperationsInput | string
+    imageUserName?: StringFieldUpdateOperationsInput | string
+    imageLinkHTML?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type BoardCreateManyInput = {
     id?: string
+    orgId: string
     title: string
+    imageId: string
+    imageThumbUrl: string
+    imageFullUrl: string
+    imageUserName: string
+    imageLinkHTML: string
+    createdAt?: Date | string
+    updatedAt?: Date | string
   }
 
   export type BoardUpdateManyMutationInput = {
     id?: StringFieldUpdateOperationsInput | string
+    orgId?: StringFieldUpdateOperationsInput | string
     title?: StringFieldUpdateOperationsInput | string
+    imageId?: StringFieldUpdateOperationsInput | string
+    imageThumbUrl?: StringFieldUpdateOperationsInput | string
+    imageFullUrl?: StringFieldUpdateOperationsInput | string
+    imageUserName?: StringFieldUpdateOperationsInput | string
+    imageLinkHTML?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type BoardUncheckedUpdateManyInput = {
     id?: StringFieldUpdateOperationsInput | string
+    orgId?: StringFieldUpdateOperationsInput | string
     title?: StringFieldUpdateOperationsInput | string
+    imageId?: StringFieldUpdateOperationsInput | string
+    imageThumbUrl?: StringFieldUpdateOperationsInput | string
+    imageFullUrl?: StringFieldUpdateOperationsInput | string
+    imageUserName?: StringFieldUpdateOperationsInput | string
+    imageLinkHTML?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type StringFilter<$PrismaModel = never> = {
@@ -1858,6 +2063,17 @@ export namespace Prisma {
     not?: NestedStringFilter<$PrismaModel> | string
   }
 
+  export type DateTimeFilter<$PrismaModel = never> = {
+    equals?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    in?: Date[] | string[]
+    notIn?: Date[] | string[]
+    lt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    lte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    gt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    gte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    not?: NestedDateTimeFilter<$PrismaModel> | Date | string
+  }
+
   export type BoardOrderByRelevanceInput = {
     fields: BoardOrderByRelevanceFieldEnum | BoardOrderByRelevanceFieldEnum[]
     sort: SortOrder
@@ -1866,17 +2082,41 @@ export namespace Prisma {
 
   export type BoardCountOrderByAggregateInput = {
     id?: SortOrder
+    orgId?: SortOrder
     title?: SortOrder
+    imageId?: SortOrder
+    imageThumbUrl?: SortOrder
+    imageFullUrl?: SortOrder
+    imageUserName?: SortOrder
+    imageLinkHTML?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
   }
 
   export type BoardMaxOrderByAggregateInput = {
     id?: SortOrder
+    orgId?: SortOrder
     title?: SortOrder
+    imageId?: SortOrder
+    imageThumbUrl?: SortOrder
+    imageFullUrl?: SortOrder
+    imageUserName?: SortOrder
+    imageLinkHTML?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
   }
 
   export type BoardMinOrderByAggregateInput = {
     id?: SortOrder
+    orgId?: SortOrder
     title?: SortOrder
+    imageId?: SortOrder
+    imageThumbUrl?: SortOrder
+    imageFullUrl?: SortOrder
+    imageUserName?: SortOrder
+    imageLinkHTML?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
   }
 
   export type StringWithAggregatesFilter<$PrismaModel = never> = {
@@ -1897,8 +2137,26 @@ export namespace Prisma {
     _max?: NestedStringFilter<$PrismaModel>
   }
 
+  export type DateTimeWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    in?: Date[] | string[]
+    notIn?: Date[] | string[]
+    lt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    lte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    gt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    gte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    not?: NestedDateTimeWithAggregatesFilter<$PrismaModel> | Date | string
+    _count?: NestedIntFilter<$PrismaModel>
+    _min?: NestedDateTimeFilter<$PrismaModel>
+    _max?: NestedDateTimeFilter<$PrismaModel>
+  }
+
   export type StringFieldUpdateOperationsInput = {
     set?: string
+  }
+
+  export type DateTimeFieldUpdateOperationsInput = {
+    set?: Date | string
   }
 
   export type NestedStringFilter<$PrismaModel = never> = {
@@ -1914,6 +2172,17 @@ export namespace Prisma {
     endsWith?: string | StringFieldRefInput<$PrismaModel>
     search?: string
     not?: NestedStringFilter<$PrismaModel> | string
+  }
+
+  export type NestedDateTimeFilter<$PrismaModel = never> = {
+    equals?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    in?: Date[] | string[]
+    notIn?: Date[] | string[]
+    lt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    lte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    gt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    gte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    not?: NestedDateTimeFilter<$PrismaModel> | Date | string
   }
 
   export type NestedStringWithAggregatesFilter<$PrismaModel = never> = {
@@ -1943,6 +2212,20 @@ export namespace Prisma {
     gt?: number | IntFieldRefInput<$PrismaModel>
     gte?: number | IntFieldRefInput<$PrismaModel>
     not?: NestedIntFilter<$PrismaModel> | number
+  }
+
+  export type NestedDateTimeWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    in?: Date[] | string[]
+    notIn?: Date[] | string[]
+    lt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    lte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    gt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    gte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    not?: NestedDateTimeWithAggregatesFilter<$PrismaModel> | Date | string
+    _count?: NestedIntFilter<$PrismaModel>
+    _min?: NestedDateTimeFilter<$PrismaModel>
+    _max?: NestedDateTimeFilter<$PrismaModel>
   }
 
 
