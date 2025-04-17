@@ -7,7 +7,7 @@ import {
 } from "@/components/ui/accordion";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
-import { Activity, CreditCard, Layout, Settings } from "lucide-react";
+import { Activity, Calendar, CreditCard, Layout, Settings } from "lucide-react";
 import { useRouter, usePathname } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { Skeleton } from "@/components/ui/skeleton";
@@ -44,6 +44,11 @@ export const NavItem = ({
       label: "Activity",
       icon: <Activity className="h-4 w-4 mr-2" />,
       href: `/organization/${organization.id}/activity`,
+    },
+    {
+      label: "Calendar",
+      icon: <Calendar className="h-4 w-4 mr-2" />,
+      href: `/organization/${organization.id}/calendar`,
     },
     {
       label: "Settings",
@@ -103,14 +108,13 @@ export const NavItem = ({
   );
 };
 
-
 NavItem.Skeleton = function SkeletonNavItem() {
-    return (
-        <div className="flex items-center gap-x-2">
-            <div className="w-10 h-10 relative shrink">
-                <Skeleton className="h-full w-full absolute" />
-            </div>
-            <Skeleton className="h-10 w-full" />
-        </div>
-    )
-}
+  return (
+    <div className="flex items-center gap-x-2">
+      <div className="w-10 h-10 relative shrink">
+        <Skeleton className="h-full w-full absolute" />
+      </div>
+      <Skeleton className="h-10 w-full" />
+    </div>
+  );
+};

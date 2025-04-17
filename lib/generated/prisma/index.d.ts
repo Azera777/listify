@@ -3324,6 +3324,7 @@ export namespace Prisma {
     title: string | null
     order: number | null
     description: string | null
+    dueDate: Date | null
     listId: string | null
     createdAt: Date | null
     updatedAt: Date | null
@@ -3334,6 +3335,7 @@ export namespace Prisma {
     title: string | null
     order: number | null
     description: string | null
+    dueDate: Date | null
     listId: string | null
     createdAt: Date | null
     updatedAt: Date | null
@@ -3344,6 +3346,7 @@ export namespace Prisma {
     title: number
     order: number
     description: number
+    dueDate: number
     listId: number
     createdAt: number
     updatedAt: number
@@ -3364,6 +3367,7 @@ export namespace Prisma {
     title?: true
     order?: true
     description?: true
+    dueDate?: true
     listId?: true
     createdAt?: true
     updatedAt?: true
@@ -3374,6 +3378,7 @@ export namespace Prisma {
     title?: true
     order?: true
     description?: true
+    dueDate?: true
     listId?: true
     createdAt?: true
     updatedAt?: true
@@ -3384,6 +3389,7 @@ export namespace Prisma {
     title?: true
     order?: true
     description?: true
+    dueDate?: true
     listId?: true
     createdAt?: true
     updatedAt?: true
@@ -3481,6 +3487,7 @@ export namespace Prisma {
     title: string
     order: number
     description: string | null
+    dueDate: Date | null
     listId: string
     createdAt: Date
     updatedAt: Date
@@ -3510,6 +3517,7 @@ export namespace Prisma {
     title?: boolean
     order?: boolean
     description?: boolean
+    dueDate?: boolean
     listId?: boolean
     createdAt?: boolean
     updatedAt?: boolean
@@ -3523,12 +3531,13 @@ export namespace Prisma {
     title?: boolean
     order?: boolean
     description?: boolean
+    dueDate?: boolean
     listId?: boolean
     createdAt?: boolean
     updatedAt?: boolean
   }
 
-  export type CardOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "title" | "order" | "description" | "listId" | "createdAt" | "updatedAt", ExtArgs["result"]["card"]>
+  export type CardOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "title" | "order" | "description" | "dueDate" | "listId" | "createdAt" | "updatedAt", ExtArgs["result"]["card"]>
   export type CardInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     list?: boolean | ListDefaultArgs<ExtArgs>
   }
@@ -3543,6 +3552,7 @@ export namespace Prisma {
       title: string
       order: number
       description: string | null
+      dueDate: Date | null
       listId: string
       createdAt: Date
       updatedAt: Date
@@ -3920,6 +3930,7 @@ export namespace Prisma {
     readonly title: FieldRef<"Card", 'String'>
     readonly order: FieldRef<"Card", 'Int'>
     readonly description: FieldRef<"Card", 'String'>
+    readonly dueDate: FieldRef<"Card", 'DateTime'>
     readonly listId: FieldRef<"Card", 'String'>
     readonly createdAt: FieldRef<"Card", 'DateTime'>
     readonly updatedAt: FieldRef<"Card", 'DateTime'>
@@ -6195,6 +6206,7 @@ export namespace Prisma {
     title: 'title',
     order: 'order',
     description: 'description',
+    dueDate: 'dueDate',
     listId: 'listId',
     createdAt: 'createdAt',
     updatedAt: 'updatedAt'
@@ -6506,6 +6518,7 @@ export namespace Prisma {
     title?: StringFilter<"Card"> | string
     order?: IntFilter<"Card"> | number
     description?: StringNullableFilter<"Card"> | string | null
+    dueDate?: DateTimeNullableFilter<"Card"> | Date | string | null
     listId?: StringFilter<"Card"> | string
     createdAt?: DateTimeFilter<"Card"> | Date | string
     updatedAt?: DateTimeFilter<"Card"> | Date | string
@@ -6517,6 +6530,7 @@ export namespace Prisma {
     title?: SortOrder
     order?: SortOrder
     description?: SortOrderInput | SortOrder
+    dueDate?: SortOrderInput | SortOrder
     listId?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
@@ -6532,6 +6546,7 @@ export namespace Prisma {
     title?: StringFilter<"Card"> | string
     order?: IntFilter<"Card"> | number
     description?: StringNullableFilter<"Card"> | string | null
+    dueDate?: DateTimeNullableFilter<"Card"> | Date | string | null
     listId?: StringFilter<"Card"> | string
     createdAt?: DateTimeFilter<"Card"> | Date | string
     updatedAt?: DateTimeFilter<"Card"> | Date | string
@@ -6543,6 +6558,7 @@ export namespace Prisma {
     title?: SortOrder
     order?: SortOrder
     description?: SortOrderInput | SortOrder
+    dueDate?: SortOrderInput | SortOrder
     listId?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
@@ -6561,6 +6577,7 @@ export namespace Prisma {
     title?: StringWithAggregatesFilter<"Card"> | string
     order?: IntWithAggregatesFilter<"Card"> | number
     description?: StringNullableWithAggregatesFilter<"Card"> | string | null
+    dueDate?: DateTimeNullableWithAggregatesFilter<"Card"> | Date | string | null
     listId?: StringWithAggregatesFilter<"Card"> | string
     createdAt?: DateTimeWithAggregatesFilter<"Card"> | Date | string
     updatedAt?: DateTimeWithAggregatesFilter<"Card"> | Date | string
@@ -6870,6 +6887,7 @@ export namespace Prisma {
     title: string
     order: number
     description?: string | null
+    dueDate?: Date | string | null
     createdAt?: Date | string
     updatedAt?: Date | string
     list: ListCreateNestedOneWithoutCardsInput
@@ -6880,6 +6898,7 @@ export namespace Prisma {
     title: string
     order: number
     description?: string | null
+    dueDate?: Date | string | null
     listId: string
     createdAt?: Date | string
     updatedAt?: Date | string
@@ -6890,6 +6909,7 @@ export namespace Prisma {
     title?: StringFieldUpdateOperationsInput | string
     order?: IntFieldUpdateOperationsInput | number
     description?: NullableStringFieldUpdateOperationsInput | string | null
+    dueDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     list?: ListUpdateOneRequiredWithoutCardsNestedInput
@@ -6900,6 +6920,7 @@ export namespace Prisma {
     title?: StringFieldUpdateOperationsInput | string
     order?: IntFieldUpdateOperationsInput | number
     description?: NullableStringFieldUpdateOperationsInput | string | null
+    dueDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     listId?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -6910,6 +6931,7 @@ export namespace Prisma {
     title: string
     order: number
     description?: string | null
+    dueDate?: Date | string | null
     listId: string
     createdAt?: Date | string
     updatedAt?: Date | string
@@ -6920,6 +6942,7 @@ export namespace Prisma {
     title?: StringFieldUpdateOperationsInput | string
     order?: IntFieldUpdateOperationsInput | number
     description?: NullableStringFieldUpdateOperationsInput | string | null
+    dueDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
@@ -6929,6 +6952,7 @@ export namespace Prisma {
     title?: StringFieldUpdateOperationsInput | string
     order?: IntFieldUpdateOperationsInput | number
     description?: NullableStringFieldUpdateOperationsInput | string | null
+    dueDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     listId?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -7299,6 +7323,17 @@ export namespace Prisma {
     not?: NestedStringNullableFilter<$PrismaModel> | string | null
   }
 
+  export type DateTimeNullableFilter<$PrismaModel = never> = {
+    equals?: Date | string | DateTimeFieldRefInput<$PrismaModel> | null
+    in?: Date[] | string[] | null
+    notIn?: Date[] | string[] | null
+    lt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    lte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    gt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    gte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    not?: NestedDateTimeNullableFilter<$PrismaModel> | Date | string | null
+  }
+
   export type ListScalarRelationFilter = {
     is?: ListWhereInput
     isNot?: ListWhereInput
@@ -7320,6 +7355,7 @@ export namespace Prisma {
     title?: SortOrder
     order?: SortOrder
     description?: SortOrder
+    dueDate?: SortOrder
     listId?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
@@ -7334,6 +7370,7 @@ export namespace Prisma {
     title?: SortOrder
     order?: SortOrder
     description?: SortOrder
+    dueDate?: SortOrder
     listId?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
@@ -7344,6 +7381,7 @@ export namespace Prisma {
     title?: SortOrder
     order?: SortOrder
     description?: SortOrder
+    dueDate?: SortOrder
     listId?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
@@ -7369,6 +7407,20 @@ export namespace Prisma {
     _count?: NestedIntNullableFilter<$PrismaModel>
     _min?: NestedStringNullableFilter<$PrismaModel>
     _max?: NestedStringNullableFilter<$PrismaModel>
+  }
+
+  export type DateTimeNullableWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: Date | string | DateTimeFieldRefInput<$PrismaModel> | null
+    in?: Date[] | string[] | null
+    notIn?: Date[] | string[] | null
+    lt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    lte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    gt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    gte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    not?: NestedDateTimeNullableWithAggregatesFilter<$PrismaModel> | Date | string | null
+    _count?: NestedIntNullableFilter<$PrismaModel>
+    _min?: NestedDateTimeNullableFilter<$PrismaModel>
+    _max?: NestedDateTimeNullableFilter<$PrismaModel>
   }
 
   export type EnumACTIONFilter<$PrismaModel = never> = {
@@ -7615,6 +7667,10 @@ export namespace Prisma {
     set?: string | null
   }
 
+  export type NullableDateTimeFieldUpdateOperationsInput = {
+    set?: Date | string | null
+  }
+
   export type ListUpdateOneRequiredWithoutCardsNestedInput = {
     create?: XOR<ListCreateWithoutCardsInput, ListUncheckedCreateWithoutCardsInput>
     connectOrCreate?: ListCreateOrConnectWithoutCardsInput
@@ -7742,6 +7798,17 @@ export namespace Prisma {
     not?: NestedStringNullableFilter<$PrismaModel> | string | null
   }
 
+  export type NestedDateTimeNullableFilter<$PrismaModel = never> = {
+    equals?: Date | string | DateTimeFieldRefInput<$PrismaModel> | null
+    in?: Date[] | string[] | null
+    notIn?: Date[] | string[] | null
+    lt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    lte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    gt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    gte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    not?: NestedDateTimeNullableFilter<$PrismaModel> | Date | string | null
+  }
+
   export type NestedStringNullableWithAggregatesFilter<$PrismaModel = never> = {
     equals?: string | StringFieldRefInput<$PrismaModel> | null
     in?: string[] | null
@@ -7769,6 +7836,20 @@ export namespace Prisma {
     gt?: number | IntFieldRefInput<$PrismaModel>
     gte?: number | IntFieldRefInput<$PrismaModel>
     not?: NestedIntNullableFilter<$PrismaModel> | number | null
+  }
+
+  export type NestedDateTimeNullableWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: Date | string | DateTimeFieldRefInput<$PrismaModel> | null
+    in?: Date[] | string[] | null
+    notIn?: Date[] | string[] | null
+    lt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    lte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    gt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    gte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    not?: NestedDateTimeNullableWithAggregatesFilter<$PrismaModel> | Date | string | null
+    _count?: NestedIntNullableFilter<$PrismaModel>
+    _min?: NestedDateTimeNullableFilter<$PrismaModel>
+    _max?: NestedDateTimeNullableFilter<$PrismaModel>
   }
 
   export type NestedEnumACTIONFilter<$PrismaModel = never> = {
@@ -7897,6 +7978,7 @@ export namespace Prisma {
     title: string
     order: number
     description?: string | null
+    dueDate?: Date | string | null
     createdAt?: Date | string
     updatedAt?: Date | string
   }
@@ -7906,6 +7988,7 @@ export namespace Prisma {
     title: string
     order: number
     description?: string | null
+    dueDate?: Date | string | null
     createdAt?: Date | string
     updatedAt?: Date | string
   }
@@ -7981,6 +8064,7 @@ export namespace Prisma {
     title?: StringFilter<"Card"> | string
     order?: IntFilter<"Card"> | number
     description?: StringNullableFilter<"Card"> | string | null
+    dueDate?: DateTimeNullableFilter<"Card"> | Date | string | null
     listId?: StringFilter<"Card"> | string
     createdAt?: DateTimeFilter<"Card"> | Date | string
     updatedAt?: DateTimeFilter<"Card"> | Date | string
@@ -8077,6 +8161,7 @@ export namespace Prisma {
     title: string
     order: number
     description?: string | null
+    dueDate?: Date | string | null
     createdAt?: Date | string
     updatedAt?: Date | string
   }
@@ -8086,6 +8171,7 @@ export namespace Prisma {
     title?: StringFieldUpdateOperationsInput | string
     order?: IntFieldUpdateOperationsInput | number
     description?: NullableStringFieldUpdateOperationsInput | string | null
+    dueDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
@@ -8095,6 +8181,7 @@ export namespace Prisma {
     title?: StringFieldUpdateOperationsInput | string
     order?: IntFieldUpdateOperationsInput | number
     description?: NullableStringFieldUpdateOperationsInput | string | null
+    dueDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
@@ -8104,6 +8191,7 @@ export namespace Prisma {
     title?: StringFieldUpdateOperationsInput | string
     order?: IntFieldUpdateOperationsInput | number
     description?: NullableStringFieldUpdateOperationsInput | string | null
+    dueDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
